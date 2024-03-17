@@ -1,0 +1,122 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
+
+// color: #ff0000;
+
+
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: "Space Grotesk", sans-serif;
+}
+
+body{
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: #f6f7fb;
+	user-select: none;
+
+}
+
+.container{
+	background-color: #fff;
+	padding: 2rem 7rem;
+	border-radius: 14px;
+	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.result_images{
+	display: flex;
+	column-gap: 7rem;
+}
+
+.container.start .user_result{
+	animation: userShake 0.7s ease infinite;
+	transform-origin: left;
+}
+
+@keyframes userShake {
+	50%{
+		transform: rotate(10deg);
+	}
+}
+
+.container.start .cpu_result{
+	animation: cpuShake 0.7s ease infinite;
+	transform-origin: right;
+}
+
+@keyframes cpuShake {
+	50%{
+		transform: rotate(-10deg);
+	}
+}
+
+.result_images img{
+	width: 100px;
+}
+
+.user_result img{
+	transform: rotate(90deg);
+}
+
+.cpu_result img{
+	transform: rotate(-90deg) rotateY(180deg);
+}
+
+.result{
+	text-align: center;
+	font-size: 2rem;
+	// color: #ff0000;
+	margin-top: 1.5rem;
+}
+
+
+.option_image img{
+	width: 75px;
+}
+
+.option_images{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-top: 2.5rem;
+
+}
+
+.container.start .option_images{
+	pointer-events: none;
+}
+
+.option_image{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	opacity: 0.5;
+	transition: opacity 0.3s ease;
+	cursor: pointer;
+
+}
+
+.option_image:hover{
+	opacity: 1;
+}
+
+.option_image.active{
+	opacity: 1;
+}
+
+.option_image img{
+	pointer-events: none;
+
+}
+
+.option_image p{
+	font-size: 1.235rem;
+	margin-top: 1rem;
+	pointer-events: none;
+
+}
